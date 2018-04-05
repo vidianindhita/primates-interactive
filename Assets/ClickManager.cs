@@ -1,13 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-// This is the library for the Phidget
-// using Phidgets22;
-// using Phidgets22.Events;
+using UnityEngine.UI;
 
 public class ClickManager : MonoBehaviour {
 
+	public Text scoreText;
 	private int score = 0;
 
 	// Use this for initialization
@@ -26,6 +24,7 @@ public class ClickManager : MonoBehaviour {
 				hit.collider.attachedRigidbody.AddForce(Vector2.up);
 				Destroy (hit.collider.gameObject);
 				score++;
+				scoreText.text = "Score: " + score.ToString ();
 				Debug.Log ("score: " + score);
 			}
 		}
