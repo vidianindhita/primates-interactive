@@ -8,6 +8,8 @@ using UnityEngine;
 
 public class ClickManager : MonoBehaviour {
 
+	private int score = 0;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -23,6 +25,8 @@ public class ClickManager : MonoBehaviour {
 				Debug.Log(hit.collider.gameObject.name);
 				hit.collider.attachedRigidbody.AddForce(Vector2.up);
 				Destroy (hit.collider.gameObject);
+				score++;
+				Debug.Log ("score: " + score);
 			}
 		}
 	}
